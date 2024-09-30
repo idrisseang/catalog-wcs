@@ -1,0 +1,82 @@
+.product__card {
+    width: 200px;
+    height: auto;
+    border-radius: 16px;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product__card img {
+    width: 100%;
+    height: auto;
+}
+
+.product__description {
+    font-size: x-small;
+    color: grey;
+}
+
+.separator {
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid gray;
+}
+.prices {
+    display: flex;
+    gap: 4px;
+}
+
+.initialPrice {
+    margin: 0;
+}
+.initialPriceDiscount {
+    color: grey;
+    text-decoration: line-through;
+}
+
+
+.discountPercentageAbove20 {
+    color: rgb(60, 211, 60);
+    font-weight: bold;
+}
+.discountPercentage{
+    font-size: small;
+    padding: 4px;
+    background-color: #D0EFFF;
+    border-radius: 4px;
+}
+.discountPrice {
+    font-size: large;
+
+}
+.discount {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.product__name {
+    margin-bottom: 4px;
+}
+
+.priceSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.priceSection button {
+    outline: none;
+    border: none;
+    font-weight: bold;
+    color: white;
+    padding: 8px;
+    background-color: #19191c;
+    border-radius: 4px;
+}
+
+.product__card .promo-text {
+    margin: 0;
+}

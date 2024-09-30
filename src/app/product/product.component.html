@@ -1,0 +1,32 @@
+@if(product) {
+    <div class="product__card">
+        <img [src]="product.getImageURL()" alt="">
+        <div class="card__header">
+            <p class="product__name">{{product.getName()}}</p>
+            <p class="product__description">{{product.getDescription()}}</p>
+        </div>
+    
+        @if(product.getPromo() !== null){
+            <div class="discount">
+                <p class="price initialPrice initialPriceDiscount">{{ product.getInitialPrice() | currency: 'EUR': 'symbol'}}</p>
+                <span class="discountPercentage" [ngClass]="{'discountPercentageAbove20' : product.getPromo()?.getPercentageIsAbove20(product.getInitialPrice())}">
+                    {{product.getPromo()?.getDiscountPercentage(product.getInitialPrice())}}%
+                </span>
+            </div>
+        }
+        <div class="priceSection">
+            @if(product.getPromo()) {
+                <p class="discountPrice">
+                    {{ product.getPromo()?.getDiscountPrice() | currency: 'EUR'}}
+                </p>
+            } @else {
+                <p class="initialPrice">{{product.getInitialPrice() | currency:'EUR'}}</p>
+            }
+            <button (click)="(buyProduct(product))">acheter</button>
+        </div>
+        @if(product.getPromo()){
+            <p class="promo-text">⏳ Fin de promo : {{product.getPromo()?.getDaysLeft()}} jours</p>
+        }
+    </div>
+    
+}

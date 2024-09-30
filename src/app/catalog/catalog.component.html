@@ -1,0 +1,21 @@
+
+@if(!collectionHasActivePromo()){
+    <p>Les promos sont terminées mais reviennent bientôt ma loutre 🦦</p>
+}
+
+<section class="products">
+    @for(product of products; track product.getId()){
+        <app-product [product]="product" (onClickBuy)="buyProduct($event)"></app-product>
+    } @empty {
+        <p class="empty__products">Aucun produit disponible mais ça revient bientôt tqt 😉</p>
+    }
+</section>
+
+@if(selectedProducts.length > 0) {
+    <section class="selectedProducts">
+        <h3>Produits Achetés</h3>
+        @for(selectedProduct of selectedProducts; track selectedProduct.getId()) {
+            <app-product [product]="selectedProduct"></app-product>
+        }
+    </section>
+}
